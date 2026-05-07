@@ -11,9 +11,9 @@ def test():
     print("-" * 40)
 
     for M, N, K in SIZES:
-        a = torch.randn(M, N, device="cuda", dtype=torch.float32)
-        b = torch.randn(N, K, device="cuda", dtype=torch.float32)
-        c = torch.empty(M, K, device="cuda", dtype=torch.float32)
+        a = torch.randn(M, N, device="cuda", dtype=torch.float16)
+        b = torch.randn(N, K, device="cuda", dtype=torch.float16)
+        c = torch.empty(M, K, device="cuda", dtype=torch.float16)
 
         solve(a, b, c, M, N, K)
         torch.cuda.synchronize()
